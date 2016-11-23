@@ -1,0 +1,41 @@
+#list all the relavant input data files in the appropriate types
+# notice the appropriate spaces
+
+#broker file format as used as input for GPS-Rosetta
+native_pdbs = 1ORM 1Q9F 1Q9G 1QJ8 1QJ9 2M06 2M07
+
+
+#RMSD cutoff for smotif SSE superposition
+#specify abs(cutoff) for each of the four stages
+# four differnt stages are stage1 (First smotif), stage2(second smotif), stage3(<75% of the data), stage4(>75% data)
+rmsd = 3.0
+rmsd_cutoff = 3.0 3.0 3.0 3.0
+
+#clash cutoff dist
+# Least distance between neighbouring SSEs
+
+clash_distance = 3.0
+
+#Specific to readin data generated from EVFold server
+
+evfold_ss = /home/kalabharath/projects/boss-evo/tm_targets/1SOR_A/EVFold/residue_numbering/1SOR_A_1SOR_A.indextable
+evfold_plm = /home/kalabharath/projects/boss-evo/tm_targets/1SOR_A/EVFold/ev_couplings/1SOR_A_PLM.txt
+
+#contacts cutoff, std is 8A
+
+
+#database cutoff to use
+# Available options are 0.5, 1.0, 1.5, 9999 (uses redundant database)
+database_cutoff = 0.25
+
+#Axial and rhombic cutoffs for different stages
+#specify abs(cutoff) for each of the four stages
+# four differnt stages are stage1 (First smotif), stage2(second smotif), stage3(<75% of the data), stage4(>75% data)
+axrh_cutoff =  100 100 60 40
+
+
+ #chisqr cutoff for different stages
+ #PCS error threshold for the 4 different stages
+# four differnt stages are stage1 (First smotif), stage2(second smotif), stage3(<75% of the data), stage4(>75% data)
+# 0.0025 (0.05 * 0.05) std error, 0.0025 *2 = 0.005, 0.0025 * 4 = 0.01
+chisqr_cutoff = 0.0025 0.0025 0.005 0.01

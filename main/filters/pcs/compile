@@ -1,0 +1,7 @@
+swig -python fastT1FM_multi.i
+gcc -Wall -fPIC -O3 -c fastT1FM_multi.c -I.
+gcc -fPIC -O3 -c fastT1FM_multi_wrap.c -I/usr/include/python2.7
+gcc -Wall -fPIC -O3 -c util.c -I. -o util.o
+gcc -Wall -fPIC -O3 -c eigen.c -I. -o eigen.o
+gcc -Wall -fPIC -O3 -c chambers.c -I. -o chambers.o
+ld -shared fastT1FM_multi.o fastT1FM_multi_wrap.o eigen.o util.o chambers.o -o _fastT1FM.so

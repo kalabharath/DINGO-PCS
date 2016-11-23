@@ -1,0 +1,5 @@
+swig -python qcprot.i
+gcc -Wall -fPIC -O3 -c qcprot.c -I.
+gcc -fPIC -O3 -c qcprot_wrap.c -I/usr/include/python2.7
+gcc -Wall -fPIC -O3 -c util.c -I. -o util.o
+ld -shared qcprot.o qcprot_wrap.o util.o -o _qcprot.so
